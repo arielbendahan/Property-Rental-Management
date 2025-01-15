@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FInal_Web_Project.Models.Apartment>
+
+@{
+    ViewBag.Title = "Apartments";
+}
+
+<h2>View all apartments</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Apartment Number
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            Rent Amount
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApartmentNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RentAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+    }
+</table>
+

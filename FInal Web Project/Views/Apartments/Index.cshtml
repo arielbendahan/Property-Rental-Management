@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FInal_Web_Project.Models.Apartment>
+
+@{
+    ViewBag.Title = "Apartments";
+}
+
+<h2>Apartments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Apartment Number
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            Rent Amount
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Building.Name)
+        </th>
+        <th>
+            Property Manager
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApartmentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Building.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.FirstName) @Html.DisplayFor(modelItem => item.User.LastName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ApartmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ApartmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ApartmentID })
+        </td>
+    </tr>
+}
+
+</table>

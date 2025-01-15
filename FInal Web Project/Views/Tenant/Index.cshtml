@@ -1,0 +1,17 @@
+﻿@model IEnumerable<FInal_Web_Project.Models.Appointment>
+
+@{
+    ViewBag.Title = "Tenant";
+}
+
+<h2>Tenant Menu</h2>
+
+<p>
+    @Html.ActionLink("Make an Appointment", "MakeAppointment", "Appointments", new { tenantID = Convert.ToInt32(User.Identity.Name) }, null)
+</p>
+<p>
+    @Html.ActionLink("View Apartments", "ViewApartments", "Apartments")
+</p>
+<p>
+    @Html.ActionLink("Create a Message", "Create", "Messages")
+</p>
